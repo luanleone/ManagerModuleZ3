@@ -1,0 +1,19 @@
+{
+    "name": "fxt-solutions/manager-module-z3",
+    "description": "Create and delete module Z3",
+    "authors": [
+        {
+            "name": "Tiago Martins da Silva",
+            "email": "tiagomartins7@gmail.com",
+            "homepage": "https://fxtsolutions.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
