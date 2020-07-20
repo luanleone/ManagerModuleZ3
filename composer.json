@@ -16,6 +16,5 @@
             "App\\": "App/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "bin": ["bin/fxt"]
 }
