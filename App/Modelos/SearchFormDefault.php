@@ -6,6 +6,8 @@ class SearchFormDefault {
     
     static function add($param){
 
+        $lowerParam = strtolower($param);
+
         $content = "<?php\n";
         $content .= "namespace {$param}\Form;\n";
         $content .= "\n";
@@ -16,7 +18,7 @@ class SearchFormDefault {
         $content .= "    public function __construct(\$name = null)\n";
         $content .= "    {\n";
         $content .= "        /* Exemple search form\n";
-        $content .= "        parent::__construct('{strtolower($param)}');\n";
+        $content .= "        parent::__construct('{$lowerParam}');\n";
         $content .= "        \$this->setAttribute('method', 'post');\n";
         $content .= "\n";
         $content .= "        \$this->add(array(\n";

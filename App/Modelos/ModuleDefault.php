@@ -40,7 +40,7 @@ class ModuleDefault{
         $content .= "    {\n";
         $content .= "        return [\n";
         $content .= "            'factories' => [\n";
-        $content .= "                Model\{$param}Table::class  => function(\$container) {\n";
+        $content .= "                Model\\{$param}Table::class  => function(\$container) {\n";
         $content .= "                    \$tableGateway = \$container->get(Model\\{$param}TableGateway::class);\n";
         $content .= "                    return new Model\\{$param}Table(\$tableGateway);\n";
         $content .= "                },\n";

@@ -5,6 +5,7 @@ namespace App\Modelos;
 class ControllerDefault {
 
     static function add($param){
+        $lowerParam = strtolower($param);
         $content = "<?php\n";
         $content .= "\n";
         $content .= "namespace {$param}\Controller;\n";
@@ -50,8 +51,8 @@ class ControllerDefault {
         $content .= "      \$data['isForm'] = 1;\n";
         $content .= "      \$form->setData(\$request->getPost());\n";
         $content .= "      \$form->isValid();\n";
-        $content .= "      \${strtolower($param)} = \$this->{$param}Table->searchList(\$form->getData());\n";
-        $content .= "      \$data['{strtolower($param)}'] = \${strtolower($param)};\n";
+        $content .= "      \${$lowerParam} = \$this->{$param}Table->searchList(\$form->getData());\n";
+        $content .= "      \$data['{$lowerParam}'] = \${$lowerParam};\n";
         $content .= "    }\n";
         $content .= "\n";
         $content .= "    return new ViewModel(\$data);\n";

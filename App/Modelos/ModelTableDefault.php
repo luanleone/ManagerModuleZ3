@@ -6,6 +6,8 @@ class ModelTableDefault{
     
     static function add($param){
 
+        $lowerParam = strtolower($param);
+
         $content = "<?php\n";
         $content .= "\n";
         $content .= "namespace {$param}\Model;\n";
@@ -44,7 +46,7 @@ class ModelTableDefault{
         $content .= "                        deceased_date,\n";
         $content .= "                        falta,\n";
         $content .= "                        fbaja \n";
-        $content .= "                    from vw_{strtolower($param)} WHERE fname IS NOT NULL \";\n";
+        $content .= "                    from vw_{$lowerParam} WHERE fname IS NOT NULL \";\n";
         $content .= "\n";
         $content .= "        if(\$params['fname'] != null && \$params['lname'] != null){\n";
         $content .= "            \$query .= \" AND ( fname LIKE '%{\$params['fname']}%' AND lname LIKE '%{\$params['lname']}%' ) \";\n";

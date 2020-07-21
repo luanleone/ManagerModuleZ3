@@ -6,6 +6,8 @@ class SearchViewDefault{
     
     static function add($param){
 
+        $lowerParam = strtolower($param);
+
         $content = "<?php\n";
         $content .= "\n";
         $content .= "use OpenEMR\Core\Header;\n";
@@ -23,7 +25,6 @@ class SearchViewDefault{
         $content .= "\n";
         $content .= "if(\$isForm == 0){ \n";
         $content .= "    echo \$this->form()->openTag(\$form);\n";
-        $content .= "    \$form->get('oxigenoterapia')->setValue(1);\n";
         $content .= "    \$form->get('residente_status')->setValue(1);\n";
         $content .= "    \$title = \$listener->z_xlt('Buscar {$param}'); ?>\n";
         $content .= "\n";
@@ -86,7 +87,7 @@ class SearchViewDefault{
         $content .= "    <div id=\"printtable\">\n";
         $content .= "        <div class=\"se_in_16\">\n";
         $content .= "            <h3 class=\"py-3\"><?= \$this->escapeHtml(\$title) ?></h3>\n";
-        $content .= "            <table class=\"table table-sm table-hover\" id=\"{strtolower($param)}\">\n";
+        $content .= "            <table class=\"table table-sm table-hover\" id=\"{$lowerParam}\">\n";
         $content .= "                <thead class=\"thead-primary\">\n";
         $content .= "                    <tr>\n";
         $content .= "                        <th class=\"text-center\" style=\"width: 300px;\"><small><?=\$listener->z_xlt('Residentes')?></small></th>\n";
@@ -94,7 +95,7 @@ class SearchViewDefault{
         $content .= "                </thead>\n";
         $content .= "                <?php \n";
         $content .= "                \$i = 0;\n";
-        $content .= "                foreach (\${strtolower($param)} as \$residentes) : \n";
+        $content .= "                foreach (\${$lowerParam} as \$residentes) : \n";
         $content .= "                    if(\$i != \$residentes['pid']){ ?>\n";
         $content .= "                        <tr class=\"table-secondary\">\n";
         $content .= "                            <td class=\"text-center align-middle\"><small><?= \$this->escapeHtml(\$residentes['fname']).\" \".\$this->escapeHtml(\$residentes['lname']) ?></small></td>\n";
@@ -109,7 +110,7 @@ class SearchViewDefault{
         $content .= "    </div>\n";
         $content .= "    <script>\n";
         $content .= "        \$(document).ready(function() {\n";
-        $content .= "            \$('#{strtolower($param)}').DataTable({\n";
+        $content .= "            \$('#{$lowerParam}').DataTable({\n";
         $content .= "                \"pageLength\": 50,\n";
         $content .= "                \"language\": {\n";
         $content .= "                    \"sProcessing\":     \"Procesando...\",\n";
