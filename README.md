@@ -11,5 +11,5 @@ set directory default create module:
 php vendor/bin/fxt module:path [path]
 
 Basic commands:
-Create: php vendor/bin/fxt module:create [NameModule]
+Create: php vendor/bin/fxt module:create [NameModule] 
 Delete: php vendor/bin/fxt module:delete [NameModule]
