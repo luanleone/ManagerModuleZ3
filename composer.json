@@ -16,5 +16,5 @@
             "App\\": "App/"
         }
     },
-    "bin": ["bin/fxt"]
+    "bin": ["fxt"]
 }
