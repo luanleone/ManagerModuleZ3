@@ -26,7 +26,7 @@ if ($argc < 2) {
 $metodo = explode(":", strtolower($argv[1]));
 if(count($metodo) != 2){
     echo "\033[31mO método deve ser informado.\n\033[0m";
-    echo "\033[33mExemplo: \033[34mphp fxt module:\033[31mcreate \033[32m[caminho]\n\033[0m";
+    echo "\033[33mExemplo: \033[34mphp vendor/bin/fxt module:\033[31mcreate \033[32m[caminho]\n\033[0m";
     exit(1);
 }
 
@@ -36,6 +36,9 @@ if($metodo[0] == 'module'){
         echo "\033[31mO nome do módulo deve ser passado.\n\033[0m";
         exit(1);
     }
+
+    $vendorDir = dirname(dirname(dirname(dirname(__FILE__))));
+    $baseDir = dirname($vendorDir);
     
     if($metodo[1] == 'path'){
         $path = $argv[2];
@@ -67,13 +70,12 @@ if($metodo[0] == 'module'){
         }
     }
 
-    if(!file_exists('path.php')){
-        echo "\033[33mFavor informar o diretório onde serão salvo os módulos.\n\033[0m";
-        echo "\033[33mComando: \033[34mphp fxt module:path \033[32m[caminho]\n\033[0m";
+    if(!file_exists($vendorDir."/fxt-solutions/manager-module-z3/path.php")){
+        echo "\033[33mFavor informar o diretório onde serão salvos os módulos.\n\033[0m";
+        echo "\033[33mComando: \033[34mphp vendor/bin/fxt module:path \033[32m[caminho]\n\033[0m";
         exit (1);
     } else {
-        $path = include 'path.php';
-        echo $path."\n";die();
+        $path = include "{$vendorDir}/fxt-solutions/manager-module-z3/path.php";
     }
 
     if($metodo[1] == 'create'){
