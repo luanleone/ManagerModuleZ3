@@ -15,6 +15,7 @@ use App\Modelos\ModuleDefault;
 use App\Modelos\PathDefault;
 use App\Modelos\SearchFormDefault;
 use App\Modelos\SearchViewDefault;
+use App\Modelos\ViewDefault;
 
 require 'functions.php';
 
@@ -131,6 +132,26 @@ if($metodo[0] == 'module'){
     
             $content = LayoutDefault::add($name);
             $file = fopen($diretorios['layoutDir']."layout.phtml","w");
+            fwrite($file, $content);
+            fclose($file);
+    
+            $content = ViewDefault::add($name, 'Index');
+            $file = fopen($diretorios['viewDir']."index.phtml","w");
+            fwrite($file, $content);
+            fclose($file);
+    
+            $content = ViewDefault::add($name, 'Add');
+            $file = fopen($diretorios['viewDir']."add.phtml","w");
+            fwrite($file, $content);
+            fclose($file);
+    
+            $content = ViewDefault::add($name, 'Edit');
+            $file = fopen($diretorios['viewDir']."edit.phtml","w");
+            fwrite($file, $content);
+            fclose($file);
+    
+            $content = ViewDefault::add($name, 'Delete');
+            $file = fopen($diretorios['viewDir']."delete.phtml","w");
             fwrite($file, $content);
             fclose($file);
     
