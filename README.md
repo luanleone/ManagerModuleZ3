@@ -11,18 +11,18 @@ ln -s vendor/fxt-solutions/manager-module-z3/fxt.php fxt
 
 ## On first use
 
-### Set directory default create module:
+#### Set directory default create module:
 ```sh
 php fxt module:path [path]
 ```
 
 ## Basic commands:
 
-### Create module
+#### Create module
 ```sh
 php fxt module:create [NameModule]
 ```
-### Delete module
+#### Delete module
 ```sh
 php fxt module:delete [NameModule]
 ```
