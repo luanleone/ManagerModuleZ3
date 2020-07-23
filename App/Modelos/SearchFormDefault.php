@@ -17,7 +17,7 @@ class SearchFormDefault {
         $content .= "{\n";
         $content .= "    public function __construct(\$name = null)\n";
         $content .= "    {\n";
-        $content .= "        /* Exemple search form\n";
+        $content .= "        // Exemple search form\n";
         $content .= "        parent::__construct('{$lowerParam}');\n";
         $content .= "        \$this->setAttribute('method', 'post');\n";
         $content .= "\n";
@@ -86,7 +86,6 @@ class SearchFormDefault {
         $content .= "                'data-target' => '#modal',\n";
         $content .= "            ],\n";
         $content .= "        ]);\n";
-        $content .= "       */\n";
         $content .= "    }\n";
         $content .= "}\n";
     
