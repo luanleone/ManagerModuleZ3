@@ -83,8 +83,10 @@ if($metodo[0] == 'module'){
         $name = ucfirst($argv[2]);
         if(!is_dir($path.$name)){
             echo "Criando o módulo ".$name."...\n";
-    
+
             // Criando diretórios
+            $names = preg_split('/(?=[A-Z])/', $name);
+            $names = $implode('-', $names);
             $diretorios = [
                 'moduleDir'      => $path.$name."/",
                 'configDir'      => $path.$name."/config/",
@@ -92,7 +94,7 @@ if($metodo[0] == 'module'){
                 'formDir'        => $path.$name."/src/".$name."/Form/",
                 'modelDir'       => $path.$name."/src/".$name."/Model/",
                 'layoutDir'      => $path.$name."/view/layout/",
-                'viewDir'        => $path.$name."/view/".strtolower($name)."/".strtolower($name)."/",
+                'viewDir'        => $path.$name."/view/".strtolower($names)."/".strtolower($names)."/",
             ];
     
             foreach($diretorios as $diretorio){
