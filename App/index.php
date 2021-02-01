@@ -86,7 +86,7 @@ if($metodo[0] == 'module'){
 
             // Criando diretórios
             $names = preg_split('/(?=[A-Z])/', $name);
-            $names = $implode('-', $names);
+            $names = implode('-', $names);
             $diretorios = [
                 'moduleDir'      => $path.$name."/",
                 'configDir'      => $path.$name."/config/",
