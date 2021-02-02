@@ -31,7 +31,7 @@ class ModelTableDefault{
         $content .= "    {\n";
         $content .= "        \$this->applicationTable     =   new ApplicationTable;\n";
         $content .= "        \$this->adapter              =   GlobalAdapterFeature::getStaticAdapter();\n";
-        $content .= "        \$this->{$param}Table        =   new TableGateway('table_name', \$adapter);  //set table name here \n";
+        $content .= "        \$this->{$param}Table        =   new TableGateway('table_name', \$this->adapter);  //set table name here \n";
         $content .= "    }\n";
         $content .= "\n";
         $content .= "\n";
