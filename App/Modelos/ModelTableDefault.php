@@ -54,11 +54,11 @@ class ModelTableDefault{
         $content .= "    public function save{$param}({$param} \${$lowerParam})\n";
         $content .= "    {\n";
         $content .= "        \$data = array(\n";
-        $content .= "            'artist' => \$album->artist, // this set yours attributes\n";
-        $content .= "            'title'  => \$album->title,  // this set yours attributes\n";
+        $content .= "            'artist' => \${$lowerParam}->artist, // this set yours attributes\n";
+        $content .= "            'title'  => \${$lowerParam}->title,  // this set yours attributes\n";
         $content .= "        );\n";
         $content .= "\n";
-        $content .= "        \$id = (int) \$album->id;\n";
+        $content .= "        \$id = (int) \${$lowerParam}->id;\n";
         $content .= "        if (\$id == 0) {\n";
         $content .= "            \$this->{$param}Table->insert(\$data);\n";
         $content .= "        } else {\n";
