@@ -12,7 +12,6 @@ class ControllerDefault {
         $content .= "\n";
         $content .= "use Laminas\Mvc\Controller\AbstractActionController;\n";
         $content .= "use Laminas\View\Model\ViewModel;\n";
-        $content .= "use Application\Listener\Listener;\n";
         $content .= "use {$param}\Model\\{$param};\n";
         $content .= "use {$param}\Model\\{$param}Table;\n";
         $content .= "use {$param}\Form\\{$param}Form;\n";
