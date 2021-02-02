@@ -29,7 +29,11 @@ class ControllerDefault {
         $content .= "\n";
         $content .= "  public function indexAction()\n";
         $content .= "  {\n";
-        $content .= "    echo \"index\";\n";
+        $content .= "    \$data = [\n";
+        $content .= "\n";
+        $content .= "    ];\n";
+        $content .= "\n";
+        $content .= "    return \$data;\n";
         $content .= "  }\n";
         $content .= "\n";
         $content .= "}\n";
