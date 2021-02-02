@@ -86,7 +86,8 @@ if($metodo[0] == 'module'){
 
             // Criando diretórios
             $names = preg_split('/(?=[A-Z])/', $name);
-            $names = implode('-', $names);
+            $nameClear = array_filter($names);
+            $names = implode('-', $nameClear);
             $diretorios = [
                 'moduleDir'      => $path.$name."/",
                 'configDir'      => $path.$name."/config/",
@@ -142,25 +143,25 @@ if($metodo[0] == 'module'){
             fwrite($file, $content);
             fclose($file);
     
-            $content = ViewDefault::add($name, 'Add');
-            $file = fopen($diretorios['viewDir']."add.phtml","w");
-            fwrite($file, $content);
-            fclose($file);
+            // $content = ViewDefault::add($name, 'Add');
+            // $file = fopen($diretorios['viewDir']."add.phtml","w");
+            // fwrite($file, $content);
+            // fclose($file);
     
-            $content = ViewDefault::add($name, 'Edit');
-            $file = fopen($diretorios['viewDir']."edit.phtml","w");
-            fwrite($file, $content);
-            fclose($file);
+            // $content = ViewDefault::add($name, 'Edit');
+            // $file = fopen($diretorios['viewDir']."edit.phtml","w");
+            // fwrite($file, $content);
+            // fclose($file);
     
-            $content = ViewDefault::add($name, 'Delete');
-            $file = fopen($diretorios['viewDir']."delete.phtml","w");
-            fwrite($file, $content);
-            fclose($file);
+            // $content = ViewDefault::add($name, 'Delete');
+            // $file = fopen($diretorios['viewDir']."delete.phtml","w");
+            // fwrite($file, $content);
+            // fclose($file);
     
-            $content = SearchViewDefault::add($name);
-            $file = fopen($diretorios['viewDir']."search.phtml","w");
-            fwrite($file, $content);
-            fclose($file);
+            // $content = SearchViewDefault::add($name);
+            // $file = fopen($diretorios['viewDir']."search.phtml","w");
+            // fwrite($file, $content);
+            // fclose($file);
     
             $content = AutoloadClassmapDefault::add();
             $file = fopen($diretorios['moduleDir']."autoload_classmap.php","w");
