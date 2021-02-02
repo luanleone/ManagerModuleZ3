@@ -14,7 +14,7 @@ class LayoutDefault{
         $content .= "<html lang=\"en\">\n";
         $content .= "    <head>\n";
         $content .= "        <meta charset=\"utf-8\">\n";
-        $content .= "        <?php echo \$this->headTitle(\$this->translate()->xl('{$param}'))->setSeparator(' - ')->setAutoEscape(false)\n";
+        $content .= "        <?php echo \$this->headTitle(\$this->translate()->xl('{$param}'))->setSeparator(' - ')->setAutoEscape(false);\n";
         $content .= "\n";
         $content .= "        Header::setupHeader([]);\n";
         $content .= "\n";
