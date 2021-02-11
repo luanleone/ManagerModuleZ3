@@ -24,6 +24,8 @@ class ControllerDefault {
         $content .= "  public function __construct(){\n";
         $content .= "    \$this->{$param} = new {$param};\n";
         $content .= "    \$this->{$param}Table = new {$param}Table;\n";
+        $content .= "    \$GLOBALS['menu'] = 'menu';\n";
+        $content .= "    \$GLOBALS['menuId'] = 1;\n";        
         $content .= "  }\n";
         $content .= "\n";
         $content .= "  public function indexAction()\n";

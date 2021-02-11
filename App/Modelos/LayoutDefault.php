@@ -31,10 +31,10 @@ class LayoutDefault{
         $content .= "            <?php echo \$this->javascriptGlobals(); ?>\n";
         $content .= "            <div class=\"row\">\n";
         $content .= "                <div class=\"col col-menu\">\n";
-        $content .= "                    <iframe class=\"border\" src=\"<?=\$this->url('Cabecera', array('action' => 'menu', 'id' => 1));?>\"\n";
-        $content .= "                            frameborder=\"0\" style=\"width:100%; height:94vh;\"></iframe>\n";
+        $content .= "                    <iframe class=\"border\" src=\"<?=\$this->url('Cabecera', array('action' => $GLOBALS['menu'], 'id' => $GLOBALS['menuId']));?>\"\n";
+        $content .= "                            frameborder=\"0\" style=\"width:100%; height:100%;\"></iframe>\n";
         $content .= "                </div>\n";
-        $content .= "                <div class=\"col p-0 m-0 border rounded\">\n";
+        $content .= "                <div class=\"col col-content\">\n";
         $content .= "                    <?php echo \$this->content; ?>\n";
         $content .= "                </div>\n";
         $content .= "            </div>\n";
